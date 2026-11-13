@@ -69,6 +69,10 @@ RewriteRule ^([^/]+)/context/?$ https://ascs-ev.github.io/ontology-management-ba
 # HTML fallback — redirect browsers to MkDocs documentation pages
 # (No fragment identifiers — Apache encodes '#' to '%23' in redirects)
 # -----------------------------------------------------------------------------
+# The openlabel namespace holds the OpenLABEL scenario-tagging profile, whose
+# pages are published as the openlabel-tagging domain (ontologies/classes/openlabel/
+# documents ASAM's own OpenLABEL ontology, which has its own namespace).
+RewriteRule ^openlabel(/(v[0-9]+(?:\.[0-9]+){0,2}(?:-[0-9A-Za-z.-]+)?|latest)(/shapes)?)?/?$ https://ascs-ev.github.io/ontology-management-base/ontologies/classes/openlabel-tagging/ [R=303,L]
 RewriteRule ^([^/]+)/(v[0-9]+(?:\.[0-9]+){0,2}(?:-[0-9A-Za-z.-]+)?|latest)/?$ https://ascs-ev.github.io/ontology-management-base/ontologies/classes/$1/ [R=303,L]
 RewriteRule ^([^/]+)/(v[0-9]+(?:\.[0-9]+){0,2}(?:-[0-9A-Za-z.-]+)?|latest)/shapes/?$ https://ascs-ev.github.io/ontology-management-base/ontologies/classes/$1/ [R=303,L]
 RewriteRule ^([^/]+)/?$ https://ascs-ev.github.io/ontology-management-base/ontologies/classes/$1/ [R=303,L]
